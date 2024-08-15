@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Neue Haas Grotest Display Pro";
+  src: url(/fonts/NeueHaasDisplayBold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotest Display Pro";
+  src: url(/fonts/NeueHaasDisplayMedium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotest Display Pro";
+  src: url(/fonts/NeueHaasDisplayLight.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotest Display Pro";
+  src: url(/fonts/NeueHaasDisplayBlack.ttf);
+  font-weight: 900;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+* {
+  font-family: "Neue Haas Grotest Display Pro";
+}
+
+input {
+  @apply border-b-[1px] border-customGray outline-none border-0 bg-transparent p-2 placeholder:transition-all focus:placeholder:pl-3 font-light placeholder:text-customGray focus:border-white focus:placeholder:text-white;
+}
+
+/* You need to provide the parent tag of anchor tag, these styles dynamically : */
+/* 
+
+1) For parent tag of anchor tag (after/before, which you used in .link-tag-parent-animate class) :
+---> border (border-color will be same)
+---> border-radius(rounded-full or whatever)
+---> background-color
+---> direction(top,bottom,left,right) (from and to) eg: from top-full to top-0
+
+2) For parent tag of anchor tag (normal) : 
+---> border-radius(rounded-full or whatever)
+*/
+
+.link-tag-parent-animate {
+  @apply overflow-hidden relative border-customGray after:absolute after:z-[1] after:w-full after:h-full after:left-0;
+}
+
+.link-tag-parent-animate::after {
+  transition: all 0.19s ease-out;
+}
+
+.link-tag-animate {
+  @apply relative z-[2];
+}
+
+.overlay::after {
+  @apply absolute top-0 left-0 w-full h-full pointer-events-none z-[1] bg-gradient-to-b from-[rgba(21,21,21,0)] to-[rgba(21,21,21,0.67)] rounded-2xl;
+  content: "";
+}

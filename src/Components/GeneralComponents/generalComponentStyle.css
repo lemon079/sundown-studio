@@ -1,0 +1,19 @@
+.loading-screen {
+  @apply fixed text-center flex items-center justify-center inset-0 z-[999] bg-black w-screen h-screen;
+}
+
+.loading-text {
+  @apply font-bold uppercase text-5xl text-transparent bg-gradient-to-r from-customOrangeRed to-customOrange bg-clip-text;
+}
+
+.blob {
+  @apply bg-customOrangeRed filter blur-lg absolute;
+}
+
+.sub-heading-container h3 {
+  @apply inline-block uppercase font-light text-sm ml-3;
+}
+
+.orange-ball {
+  @apply inline-block bg-customOrangeRed rounded-full;
+}
