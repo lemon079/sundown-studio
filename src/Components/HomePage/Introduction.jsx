@@ -29,7 +29,7 @@ const Introduction = () => {
 
                 <div className="side-2 w-[70%] md:w-full sm:max-w-[300px] md:max-w-full">
                     <figure className=' mt-0 md:mt-32 lg:mt-40'>
-                        <img src="../src/assets/images/Introduction.webp" alt="tick" className='rounded-xl' />
+                        <img src="/images/Introduction.webp" alt="tick" className='rounded-xl' />
                         <figcaption className='font-light mt-10'>We love to create, we love to solve, we love to collaborate, and we love to turn amazing ideas into reality. We’re here to partner with you through every step of the process and know that relationships are the most important things we build.</figcaption>
                     </figure>
                 </div>

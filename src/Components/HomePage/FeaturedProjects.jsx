@@ -9,50 +9,50 @@ const FeaturedProducts = () => {
             name: "NYFW popup",
             brand: "afterpay",
             type: "experiential",
-            videoLink: "./src/assets/videos/nyfw-popup.mp4",
+            videoLink: "/videos/nyfw-popup.mp4",
         },
         {
             name: "play new kidvision",
             brand: "nike",
             type: "environment",
-            videoLink: "./src/assets/videos/play-new-kidsvision.mp4",
+            videoLink: "/videos/play-new-kidsvision.mp4",
         },
         {
             name: "capezio NYC flagship",
             brand: "capezio",
             type: "environment",
-            videoLink: "./src/assets/videos/capezio-nyc-flagship.mp4",
+            videoLink: "/videos/capezio-nyc-flagship.mp4",
         },
         {
             name: "converse SoHo",
             brand: "capezio",
             type: "environment",
-            videoLink: "./src/assets/videos/converse-soho.mp4",
+            videoLink: "/videos/converse-soho.mp4",
         },
         {
             name: "50th anniversary",
             brand: "nike",
             type: "environment",
-            videoLink: "./src/assets/videos/nyfw-popup.mp4",
+            videoLink: "/videos/nyfw-popup.mp4",
             // actual video wasn't available
         },
         {
             name: "kelce super bowl party",
             brand: "wave sports entertainment",
             type: "experiential",
-            videoLink: "./src/assets/videos/kelce-super-bowl-party.mp4",
+            videoLink: "/videos/kelce-super-bowl-party.mp4",
         },
         {
             name: "carmelo anthony 7pm in brooklyn set",
             brand: "wave sports entertainment",
             type: "environment",
-            videoLink: "./src/assets/videos/carmelo-anthony.mp4",
+            videoLink: "/videos/carmelo-anthony.mp4",
         },
         {
             name: "makers studio HOI",
             brand: "nike",
             type: "experiential",
-            videoLink: "./src/assets/videos/capezio-nyc-flagship.mp4",
+            videoLink: "/videos/capezio-nyc-flagship.mp4",
             // actual video wasn't available
         },
     ];

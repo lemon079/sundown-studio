@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from '../assets/images/website-logo.svg';
 import '../index.css';
 import { HiBars2 } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
@@ -20,7 +19,7 @@ const NavBar = () => {
             <section className="header-container relative bg-customWhite pt-6 px-5 sm:px-8 flex justify-between items-center">
                 <figure className={`transition-opacity duration-[0.1s] ${isNavOpen ? 'opacity-0' : 'opacity-100'}`}>
                     <Link to="/" aria-label="Homepage">
-                        <img src={logo} alt="Website Logo" />
+                        <img src='/images/website-logo.svg' alt="Website Logo" />
                     </Link>
                 </figure>
                 <ul className="navigation-bar hidden sm:flex gap-3 capitalize font-light">

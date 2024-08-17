@@ -8,31 +8,31 @@ const BrandPartners = ({ carousal_item_border_color = 'black' }) => {
     const brands = [
         {
             paragraph: 'Retained Production support across retail and events in NY, CHI, LA. Creative Design, Design Management, Production/Project Management, and execution of work from concept to installation across the Country.',
-            image: '../src/assets/images/brands-logo/nike-logo.svg'
+            image: '/images/brands-logo/nike-logo.svg'
         },
         {
             paragraph: 'Creative Concepting, Design, Design Management, Project Management, and execution of work from concept to installation across the Country. Cross functional communication and management of third party partners.',
-            image: '../src/assets/images/brands-logo/converse-logo.svg'
+            image: '/images/brands-logo/converse-logo.svg'
         },
         {
             paragraph: 'Creative Concepting, 2D & 3D Design, Design Management for work in NYC and across the country.',
-            image: '../src/assets/images/brands-logo/northface-logo.svg'
+            image: '/images/brands-logo/northface-logo.svg'
         },
         {
             paragraph: 'Production and design along with install oversight and execution support for the SoHo store opening on Broadway St, New York. Also working on creative and production work for a new store opening in Glendale, California.',
-            image: '../src/assets/images/brands-logo/arcteryx-logo.svg'
+            image: '/images/brands-logo/arcteryx-logo.svg'
         },
         {
             paragraph: 'Design and Production partner for Hunter Holiday 2022 Pop-in at Nordstrom 57th St, New York, including activations in Women’s, Men’s and Kid’s zones. Thirty-five (35) additional smaller take-downs in Nordstrom stores across the US. Concept design for Holiday boot customization events in stores across winter 2022.',
-            image: '../src/assets/images/brands-logo/hunter-logo.svg'
+            image: '/images/brands-logo/hunter-logo.svg'
         },
         {
             paragraph: 'Creative, Design, and Production Partner for 2023 CES. Scope Included creation of Branding Identity, Assets, and Digital Content, Design, Production design, Production oversight and Installation of client activations for IBM, Delta, Instacart, and more.',
-            image: '../src/assets/images/brands-logo/medialink-logo.svg'
+            image: '/images/brands-logo/medialink-logo.svg'
         },
         {
             paragraph: 'Creative, Design, and Production Partner for 2022 NY Fashion Week Pop-Up space. In Partnership with B-Reel scope including creation of Final Design, Design Assets, 3D Renders, Production design, Production/Partner oversight and creation of a two (2) story pop-up for Afterpay’s clients such as Crocs, JD Sports, Container Store, & Revolve.',
-            image: '../src/assets/images/brands-logo/afterpay-logo.svg'
+            image: '/images/brands-logo/afterpay-logo.svg'
         },
     ]
 
