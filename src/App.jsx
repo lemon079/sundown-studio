@@ -25,6 +25,7 @@ function App() {
             <Route path="/work" element={<Work />} />
             <Route path="/studio" element={<Studio />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </div>
 

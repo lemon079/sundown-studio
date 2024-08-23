@@ -24,7 +24,7 @@ const Contact = () => {
                 <div className="wrapper px-10 grid grid-cols-1 gap-20 md:grid-cols-2 items-center max-w-[1320px] mx-auto">
 
                     <figure className='flex items-center'>
-                        <img src="../src/assets/images/location-map.webp" alt="Location-map" width={500} className='rounded-full' />
+                        <img src="/images/location-map.webp" alt="Location-map" width={500} className='rounded-full' />
                     </figure>
                     <section className='relative flex flex-col gap-16 md:gap-20'>
                         <Blob WidthHeight='w-[350px] h-[350px]' position='bottom-0 left-24' customClass='moving_blob' />
