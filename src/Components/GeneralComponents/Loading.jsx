@@ -39,9 +39,9 @@ const Loading = () => {
     return (
         <>
             <div className='loading-screen'>
-                <div className='overflow-hidden relative w-[350px] h-[52px]'>
+                <div className='overflow-hidden relative w-full h-[52px]'>
                     {loadText.map(text => (
-                        <div key={text} className='loading-text absolute opacity-0 translate-y-[100%] top-0 left-0 text-center'>{text}</div>
+                        <div key={text} className='loading-text w-[100vw] absolute opacity-0 top-0 left-0 text-center'>{text}</div>
                     ))}
                 </div>
             </div>

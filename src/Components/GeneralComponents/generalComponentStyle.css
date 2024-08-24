@@ -3,7 +3,7 @@
 }
 
 .loading-text {
-  @apply font-bold uppercase text-5xl text-transparent bg-gradient-to-r from-customOrangeRed to-customOrange bg-clip-text;
+  @apply font-bold uppercase text-3xl sm:text-5xl text-transparent bg-gradient-to-r from-customOrangeRed to-customOrange bg-clip-text;
 }
 
 .blob {
