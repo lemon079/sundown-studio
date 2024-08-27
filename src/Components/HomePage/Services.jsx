@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import gsap from "gsap";
+import LocomotiveScroll from "locomotive-scroll";
+import { useGSAP } from "@gsap/react";
 
 const Services = () => {
-
   const services = [
     {
       text: "design",
@@ -24,21 +26,53 @@ const Services = () => {
   ];
 
   const [selected, setSelected] = useState(0);
+  const paragraphRef = useRef(null);
+  const imageRef = useRef(null);
+  const scrollContainerRef = useRef(null);
 
   function activeService(index) {
     setSelected(index);
   }
 
+  useGSAP(() => {
+
+    const scroll = new LocomotiveScroll({
+      el: scrollContainerRef.current,
+      smooth: true,
+      multiplier: 0, // Adjust this multiplier to control the overall scroll speed
+    });
+
+    gsap.fromTo(
+      paragraphRef.current,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+    );
+
+    gsap.fromTo(
+      imageRef.current,
+      { opacity: 0, scale: 0.95 },
+      { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }
+    );
+
+
+    return () => scroll.destroy();
+  }, { scope: '.services-container', dependencies: [selected] });
+
   return (
     <>
       {services.length > 0 && (
-        <section className="services-container my-20 mx-10 overflow-hidden max-w-[1270px] xl:mx-auto">
+        <section
+          className="services-container my-20 mx-10 overflow-hidden sm:max-w-[1270px] xl:mx-auto"
+          data-scroll-container
+          ref={scrollContainerRef}
+        >
           <div className="wrapper grid grid-cols-1 md:grid-cols-2 bg-black rounded-2xl ">
-            <section className="service-container py-10 md:p-10 lg:p-20 rounded-2xl text-customWhite flex flex-col gap-5 items-center justify-center">
-              <div className="capitalize text-6xl md:text-5xl lg:text-6xl">
+            <section className="px-8 py-10 md:p-10 lg:p-20 rounded-2xl text-customWhite flex flex-col gap-5 items-center justify-center">
+              <div className="capitalize">
                 {services.map((service, index) => (
-                  <h2 key={service.text}
-                    className={`pl-3 border-l-2 md:border-l-4 cursor-pointer transition-all ${selected == index
+                  <h2
+                    key={service.text}
+                    className={`text-5xl lg:text-7xl pl-3 border-l-2 md:border-l-4 cursor-pointer transition-all ${selected === index
                       ? "text-customWhite border-customOrangeRed"
                       : "text-customGray/50 border-customGray/50"
                       }`}
@@ -48,15 +82,21 @@ const Services = () => {
                   </h2>
                 ))}
               </div>
-              <p className="services-paragraph font-light max-w-[280px] md:max-w-[240px] lg:max-w-[340px] text-sm lg:text-lg">
+              <p
+                ref={paragraphRef}
+                className="services-paragraph font-light max-w-[340px] md:max-w-[340px] lg:max-w-[400px] text-[0.9rem] md:text-base lg:text-lg"
+              >
                 {services[selected].paragraph}
               </p>
             </section>
             <section className="image-container">
               <img
+                ref={imageRef}
                 src={services[selected].image}
                 alt={services[selected].text}
                 className="w-full h-full rounded-2xl object-cover object-right"
+                data-scroll
+                data-scroll-speed="0.1" // Adjust this value for faster or slower scroll speed
               />
             </section>
           </div>

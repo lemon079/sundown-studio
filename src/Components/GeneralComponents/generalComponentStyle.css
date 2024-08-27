@@ -7,7 +7,7 @@
 }
 
 .blob {
-  @apply bg-customOrangeRed filter blur-lg absolute;
+  @apply bg-customOrangeRed filter blur-[16px] absolute;
 }
 
 .sub-heading-container h3 {

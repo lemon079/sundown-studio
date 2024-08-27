@@ -4,27 +4,14 @@ import Blob from "./GeneralComponents/Blob";
 import "../index.css";
 import gsap from 'gsap'
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const Work = () => {
 
-  gsap.registerPlugin(useGSAP);
 
-  useGSAP(() => {
-    gsap.to('.moving_blob', {
-      y: '10%',
-      x: '40%',
-      transform: 'scale3d(0.85,0.8,1) rotate(-20deg)',
-      duration: 8,
-      yoyo: true,
-      repeat: -1,
-      ease: 'power1',
-    })
-
-  }, { scope: '.work-container' })
-
-
+  const [selected, setSelected] = useState(0);
+  const [filteredProjects, setFilteredProjects] = useState([]);
   const filter = ["all", "experiential", "environment", "digital"];
-
   const projects = [
     {
       title: "medialink CES",
@@ -140,8 +127,50 @@ const Work = () => {
     },
   ];
 
-  const [selected, setSelected] = useState(0);
-  const [filteredProjects, setFilteredProjects] = useState([]);
+  gsap.registerPlugin(useGSAP);
+
+  useGSAP(() => {
+    const animationPower = 'power3.inOut';
+    const animationDuration = 1.2;
+
+    gsap.to('.moving_blob', {
+      y: '10%',
+      x: '40%',
+      transform: 'scale3d(0.85,0.8,1) rotate(-20deg)',
+      duration: 8,
+      yoyo: true,
+      repeat: -1,
+      ease: 'power1',
+    })
+
+    // hero-heading ===> ( heading and filterbox ) animation
+    gsap.from('.simple--animate', {
+      opacity: 0,
+      y: '100%',
+      ease: animationPower,
+      duration: animationDuration,
+    })
+
+  }, { scope: '.work-container' })
+
+  useGSAP(() => {
+
+    const cardArray = gsap.utils.toArray('.card--animate');
+
+    cardArray.map(singleCard => {
+      gsap.from(singleCard, {
+        y: '50%',
+        transform: 'rotate3d(1.5, 1.4, 1.5, 45deg)',
+        opacity: 0,
+        scrollTrigger: {
+          trigger: singleCard,
+          start: 'top 70%',
+          end: 'bottom 70%',
+        }
+      })
+    })
+
+  }, [selected])
 
   function handleSelectedFilter(currentFilterID, filterType) {
     setSelected(currentFilterID);
@@ -160,18 +189,20 @@ const Work = () => {
     <>
       <section className="work-container relative py-40 max-w-[1350px] mx-auto ">
         <Blob WidthHeight="w-[600px] h-[600px]" position="absolute top-[0%] left-[0%] z-[-1]" transform="translate-x-[30%] sm:translate-x-[50%] translate-y-[0%]" customClass="moving_blob" />
-        <div className="ml-8">
-          <h1 className="uppercase text-[7rem] sm:text-[10rem] leading-[10rem]">work</h1>
+        <div className="ml-5 sm:ml-10">
+          <div className="overflow-hidden">
+            <h1 className="simple--animate uppercase text-8xl sm:text-[12rem]">work</h1>
+          </div>
           {filter.length > 0 && (
             <nav>
-              <ul className="text-sm rounded-full font-light border-[1px] border-customGray text-customGray bg-transparent flex w-fit p-1">
+              <ul className="simple--animate text-xs md:text-base rounded-full flex w-fit p-1 font-light border-2 border-borderColor bg-borderColor/80">
                 {filter.map((filter, index) => (
                   <li
                     key={filter}
                     onClick={() => handleSelectedFilter(index, filter)}
                   >
                     <button
-                      className={`capitalize text-black py-2 px-4 rounded-full ${selected == 0
+                      className={`capitalize py-2 px-3 rounded-full ${selected == 0
                         ? "bg-transparent"
                         : selected == index && "bg-black text-white"
                         }`}
@@ -191,13 +222,14 @@ const Work = () => {
               <a
                 href=""
                 key={project.title}
-                className="relative overflow-hidden rounded-2xl odd:h-[400px] even:h-[300px] "
+                className="card--animate relative overflow-hidden rounded-2xl odd:h-[400px] even:h-[300px] "
               >
                 <div className="overlay"></div>
                 {project.img != null && (
                   <img
                     src={project.img}
                     alt={project.title}
+                    loading="lazy"
                     className="transition-all ease-linear hover:scale-[1.3] object-cover w-full h-full rounded-2xl"
                   />
                 )}

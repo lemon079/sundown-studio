@@ -1,9 +1,40 @@
 import React, { useState } from "react";
 import '../../index.css'
-import SmallSubHeading from "../GeneralComponents/SmallSubHeading";
 import { HiArrowLongRight } from "react-icons/hi2";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SmallSubHeading from "../GeneralComponents/SmallSubHeading";
+import gsap from 'gsap'
 
 const FeaturedProducts = () => {
+
+    gsap.registerPlugin(useGSAP);
+    gsap.registerPlugin(ScrollTrigger);
+
+    useGSAP(() => {
+
+        const animationPower = 'power3.inOut';
+        const animationDuration = 0.5;
+
+        const projectLinks = gsap.utils.toArray('.links--animate');
+
+        projectLinks.map(singleProjectLink => {
+            gsap.from(singleProjectLink, {
+                y: '100%',
+                opacity: 0,
+                duration: animationDuration,
+                ease: animationPower,
+                transform: 'rotate3d(1,1,1,-80deg)',
+                scrollTrigger: {
+                    trigger: singleProjectLink,
+                    start: 'center 120%',
+                    end: 'center 100%'
+                }
+            })
+        })
+
+    }, { scope: '.featured-projects-container' })
+
     const projects = [
         {
             name: "NYFW popup",
@@ -58,6 +89,7 @@ const FeaturedProducts = () => {
     ];
 
 
+
     return (
         <>
             {projects.length > 0 && (
@@ -98,8 +130,8 @@ const SingleProject = ({ project }) => {
         setIsMouseEntered(false);
     }
 
-    
-    
+
+
     return (
         <li className="my-10 md:my-0 max-w-[400px] md:max-w-full">
             <video
@@ -111,7 +143,7 @@ const SingleProject = ({ project }) => {
                 controls={false}
             ></video>
             <div className="link-tag-parent-animate lg:border-b-[1px] mt-5 lg:mt-0 lg:after:bg-customOrange after:-top-full after:hover:top-0" onMouseEnter={onEnter} onMouseLeave={onLeave}>
-                <a href="#" className="link-tag-animate lg:p-8 flex flex-col lg:flex-row justify-between lg:items-center capitalize">
+                <a href="#" className="links--animate link-tag-animate lg:p-8 flex flex-col lg:flex-row justify-between lg:items-center capitalize">
                     <h2 className="text-4xl lg:text-5xl">{project.name}</h2>
                     <h3 className="lg:text-right">
                         <div className="uppercase font-medium">

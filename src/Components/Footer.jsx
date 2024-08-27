@@ -21,14 +21,14 @@ const Footer = () => {
                     <div className='px-8 md:px-16 grid items-center grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-0'>
                         <ul className="page-navigation-links space-y-3 w-fit">
                             {links.map(({ link, path }) => {
-                                return <Link to={path} key={link} className='text-3xl font-bold block'>{link}</Link>
+                                return <Link to={path} key={link} className='text-3xl font-bold block transition-all hover:text-customWhite'>{link}</Link>
                             })}
                         </ul>
                         <div className="email-box space-y-5 max-w-[335px] sm:max-w-[400px] sm:mx-auto">
                             <h2 className='font-light text-xl sm:text-2xl pr-8'>get industry insights and creative inspiration straight to your inbox</h2>
                             <div className='relative text-xl'>
-                            <input type="email" name="email" id="email" placeholder='Email address' className='w-full'/>
-                            <button  className='text-3xl absolute right-0 top-3'><HiArrowLongRight/></button>
+                                <input type="email" name="email" id="email" placeholder='Email address' className='w-full' />
+                                <button className='text-3xl absolute right-0 top-3'><HiArrowLongRight /></button>
                             </div>
                         </div>
                     </div>

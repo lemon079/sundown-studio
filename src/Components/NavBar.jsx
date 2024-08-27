@@ -17,7 +17,7 @@ const NavBar = () => {
     return (
         <header className='relative z-[10]'>
             <section className="header-container relative bg-customWhite pt-6 px-5 sm:px-8 flex justify-between items-center">
-                <figure className={`transition-opacity duration-[0.1s] ${isNavOpen ? 'opacity-0' : 'opacity-100'}`}>
+                <figure className={`transition-opacity duration-[0.1s] ${isNavOpen ? 'opacity-0 hidden' : 'opacity-100 block'}`}>
                     <Link to="/" aria-label="Homepage">
                         <img src='/images/website-logo.svg' alt="Website Logo" />
                     </Link>
@@ -27,7 +27,7 @@ const NavBar = () => {
                         <li key={text} className='link-tag-parent-animate border-[1px] rounded-full after:rounded-full after:top-[100%] hover:after:top-[0%] after:bg-black'>
                             <Link
                                 to={path}
-                                className="link-tag-animate block px-6 pt-1 pb-3 hover:text-white"
+                                className="link-tag-animate block text-sm px-[1.2rem] pt-1 pb-3 hover:text-white"
                                 aria-label={text}
                             >
                                 {text}

@@ -16,7 +16,7 @@ const HomePage = () => {
             <Introduction />
             <FeaturedProjects />
             <Services />
-            <BrandPartners carousal_item_border_color='customGray' />
+            <BrandPartners />
         </>
     )
 }

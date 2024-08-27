@@ -3,7 +3,7 @@ import SmallSubHeading from '../GeneralComponents/SmallSubHeading'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
-const BrandPartners = ({ carousal_item_border_color = 'black' }) => {
+const BrandPartners = ({ carousal_item_border_color = 'border-customGray' }) => {
 
     const brands = [
         {
@@ -50,7 +50,7 @@ const BrandPartners = ({ carousal_item_border_color = 'black' }) => {
                             breakpoints: {
                                 0: {
                                     fixedWidth: '100%',
-                                    padding: { left: '0px', right: '50px' },
+                                    padding: { left: '30px', right: '50px' },
                                 },
                                 640: {
                                     fixedWidth: '60%',
@@ -69,9 +69,9 @@ const BrandPartners = ({ carousal_item_border_color = 'black' }) => {
                         }}>
                             {
                                 brands.map((brand, index) => (
-                                    <SplideSlide key={`brand-${index + 1}`} className={`h-fit space-y-5 border-l-[1px] border-${carousal_item_border_color} pl-10 pr-20`}>
+                                    <SplideSlide key={`brand-${index + 1}`} className={`h-fit space-y-5 border-l-[1px] ${carousal_item_border_color} pl-10 pr-5 sm:pr-20`}>
                                         <img src={brand.image} alt={`brand-logo-${index + 1}`} className='w-40' />
-                                        <p className='font-light text-black max-w-[380px] mr-auto sm:max-w-full lg:text-xl'>{brand.paragraph}</p>
+                                        <p className='font-light text-black max-w-[380px] mr-auto sm:max-w-full  text-sm md:text-lg'>{brand.paragraph}</p>
                                     </SplideSlide>
                                 ))
                             }
