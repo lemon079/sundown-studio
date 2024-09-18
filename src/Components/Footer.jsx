@@ -1,6 +1,9 @@
 import React from 'react'
 import '../index.css'
 import { CiGlobe } from "react-icons/ci";
+import { FaInstagram } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa6";
+
 import { HiArrowLongRight } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 
@@ -26,10 +29,10 @@ const Footer = () => {
                         </ul>
                         <div className="email-box space-y-5 max-w-[335px] sm:max-w-[400px] sm:mx-auto">
                             <h2 className='font-light text-xl sm:text-2xl pr-8'>get industry insights and creative inspiration straight to your inbox</h2>
-                            <div className='relative text-xl'>
+                            <form className='relative text-xl' method='post'>
                                 <input type="email" name="email" id="email" placeholder='Email address' className='w-full' />
                                 <button className='text-3xl absolute right-0 top-3'><HiArrowLongRight /></button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 }
@@ -39,8 +42,8 @@ const Footer = () => {
                 <div className='footer-links-wrapper capitalize font-light border-t-[1px] mx-10 pt-10 flex flex-wrap justify-between'>
                     <h4>Copyright &copy; sundown studio</h4>
                     <h4 className='flex items-center gap-1'><CiGlobe /> Brooklyn, NY</h4>
-                    <a href='#'>instagram</a>
-                    <a href='#'>linkedin</a>
+                    <a href='www.instagram.com' className='flex items-center gap-1'><FaInstagram />instagram</a>
+                    <a href='www.linkedin.com' className='flex items-center gap-1'><FaLinkedin />linkedin</a>
                 </div>
             </div>
         </>

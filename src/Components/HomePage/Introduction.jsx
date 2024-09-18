@@ -32,7 +32,7 @@ const Introduction = () => {
                 start: 'top center',
             }
         })
-        
+
         gsap.from('.image--animate', {
             opacity: 0,
             x: '100%',

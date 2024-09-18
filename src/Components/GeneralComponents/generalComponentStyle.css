@@ -1,9 +1,9 @@
 .loading-screen {
-  @apply fixed text-center flex items-center justify-center inset-0 z-[999] bg-black w-screen h-screen;
+  @apply w-full h-screen bg-black fixed z-[999] flex justify-center items-center;
 }
 
 .loading-text {
-  @apply font-bold uppercase text-3xl sm:text-5xl text-transparent bg-gradient-to-r from-customOrangeRed to-customOrange bg-clip-text;
+  @apply font-bold uppercase text-3xl md:text-5xl lg:text-6xl text-transparent bg-gradient-to-r from-customOrangeRed from-20% to-customOrange bg-clip-text text-center w-full absolute top-0;
 }
 
 .blob {

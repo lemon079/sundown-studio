@@ -46,23 +46,24 @@ const BrandPartners = ({ carousal_item_border_color = 'border-customGray' }) => 
                             pagination: false,
                             drag: 'free',
                             arrows: false,
+                            trimSpace: false,
                             mediaQuery: 'min',
                             breakpoints: {
                                 0: {
                                     fixedWidth: '100%',
-                                    padding: { left: '30px', right: '50px' },
+                                    padding: { left: '30px', },
                                 },
                                 640: {
                                     fixedWidth: '60%',
-                                    padding: { left: '50px', right: '50px' },
+                                    padding: { left: '50px', },
                                 },
                                 720: {
                                     fixedWidth: '40%',
-                                    padding: { left: '50px', right: '0px' },
+                                    padding: { left: '50px', },
                                 },
                                 1024: {
                                     fixedWidth: '40%',
-                                    padding: { left: '170px', right: '10px' },
+                                    padding: { left: '170px', },
                                 },
                             }
 
@@ -71,7 +72,7 @@ const BrandPartners = ({ carousal_item_border_color = 'border-customGray' }) => 
                                 brands.map((brand, index) => (
                                     <SplideSlide key={`brand-${index + 1}`} className={`h-fit space-y-5 border-l-[1px] ${carousal_item_border_color} pl-10 pr-5 sm:pr-20`}>
                                         <img src={brand.image} alt={`brand-logo-${index + 1}`} className='w-40' />
-                                        <p className='font-light text-black max-w-[380px] mr-auto sm:max-w-full  text-sm md:text-lg'>{brand.paragraph}</p>
+                                        <p className='font-light text-black max-w-[380px] mr-auto sm:max-w-full text-sm md:text-lg'>{brand.paragraph}</p>
                                     </SplideSlide>
                                 ))
                             }

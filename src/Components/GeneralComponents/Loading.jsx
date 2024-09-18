@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
 import './generalComponentStyle.css'
@@ -6,28 +6,28 @@ import './generalComponentStyle.css'
 const Loading = () => {
 
     useGSAP(() => {
-
-        const tl = gsap.timeline();
-
+        const durationofChange = 0.6;
         gsap.to('.loading-text', {
             opacity: 1,
-            translateY: '0%',
-            stagger: 0.6,
+            stagger: durationofChange,
+            y: '0%',
             ease: 'expo.inOut',
+            yoyo: true,
         })
 
         gsap.to('.loading-text', {
-            delay: 0.5,
-            translateY: '-100%',
-            stagger: 0.6,
+            y: '100%',
+            opacity: 0,
+            stagger: durationofChange,
+            delay: durationofChange,
             ease: 'expo.inOut',
-        })
-
-        gsap.to('.loading-screen', {
-            x: '-100%',
-            duration: 1,
-            delay: 2,
-            ease: 'power4.inOut',
+            onComplete: () => {
+                gsap.to('.loading-screen', {
+                    x: '-100%',
+                    duration: durationofChange,
+                    ease: 'power4.inOut',
+                })
+            }
         })
     }, [])
 
@@ -36,9 +36,9 @@ const Loading = () => {
     return (
         <>
             <div className='loading-screen'>
-                <div className='overflow-hidden relative w-full h-[100px]'>
+                <div className='relative w-full overflow-hidden h-[100px] '>
                     {loadText.map(text => (
-                        <div key={text} className='loading-text w-[100vw] sm:text-7xl absolute opacity-0 top-0 left-0 text-center'>{text}</div>
+                        <div key={text} className='loading-text translate-y-full opacity-0'>{text}</div>
                     ))}
                 </div>
             </div>
