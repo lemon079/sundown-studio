@@ -1,5 +1,5 @@
 import React from "react";
-import OrangeBall from "../GeneralComponents/OrangeBall";
+import OrangeBall from "../ui/OrangeBall";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 

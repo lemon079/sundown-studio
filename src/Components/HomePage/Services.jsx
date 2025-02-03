@@ -96,7 +96,7 @@ const Services = () => {
                 alt={services[selected].text}
                 className="w-full h-full rounded-2xl object-cover object-right"
                 data-scroll
-                data-scroll-speed="0.1" // Adjust this value for faster or slower scroll speed
+                data-scroll-speed="0.04" // Adjust this value for faster or slower scroll speed
               />
             </section>
           </div>

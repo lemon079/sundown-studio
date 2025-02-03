@@ -1,5 +1,5 @@
 import React from 'react';
-import Blob from '../GeneralComponents/Blob';
+import Blob from '../ui/Blob';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 

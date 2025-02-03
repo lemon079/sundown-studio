@@ -1,5 +1,5 @@
 import React from 'react'
-import SmallSubHeading from '../GeneralComponents/SmallSubHeading'
+import SmallSubHeading from '../ui/SmallSubHeading'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
