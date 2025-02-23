@@ -32,8 +32,7 @@ const Studio = () => {
         duration: animationDuration,
       });
 
-      // All CONTAINERS ===>  (h2, paragraph and list) animation
-
+      // All CONTAINERS ===> (h2, paragraph and list) animation
       const allHeadings = gsap.utils.toArray(".containers .heading--animate");
       allHeadings.map((singleHeading) => {
         gsap.from(singleHeading, {
@@ -173,11 +172,10 @@ const Studio = () => {
                 key={section.id}
                 className={`container-${section.id} space-y-10 lg:space-y-28 `}
               >
-                <div className={`overflow-hidden`}>
+                <div className="overflow-hidden">
                   <h2
-                    className={`heading--animate uppercase text-[${
-                      20 - section.heading.fontsize
-                    }vw] leading-[17vw] text-center`}
+                    style={{ fontSize: `${20 - section.heading.fontsize}vw` }}
+                    className="heading--animate uppercase leading-[17vw] text-center"
                   >
                     {section.heading.name}
                   </h2>
