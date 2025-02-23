@@ -47,7 +47,7 @@ const BrandPartners = ({
   return (
     <>
       <section className="brand-partners-container relative">
-        <div className="wrapper space-y-20">
+        <div className="wrapper space-y-20 pb-24 mt-20">
           <SmallSubHeading text="who we work with" customClass="ml-10" />
           <section className="carousal-container ">
             <Splide
