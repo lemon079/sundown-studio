@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SmallSubHeading from "../ui/SmallSubHeading";
 import gsap from "gsap";
+import LazyVideo from "../LazyVideo";
 
 const FeaturedProducts = () => {
   gsap.registerPlugin(useGSAP);
@@ -133,8 +134,9 @@ const SingleProject = ({ project }) => {
 
   return (
     <li className="my-10 md:my-0 max-w-[400px] md:max-w-full">
-      <video
-        src={project.videoLink ? project.videoLink : null}
+      <LazyVideo
+        src={project.videoLink || null}
+        // Optionally add a poster attribute if available
         className={`object-cover rounded-xl lg:fixed pointer-events-none z-[200] top-24 right-80 lg:w-[25%] h-[500px] lg:h-[70%] ${
           isMouseEntered ? "lg:block" : "lg:hidden"
         }`}
@@ -142,7 +144,8 @@ const SingleProject = ({ project }) => {
         muted={true}
         autoPlay={true}
         controls={false}
-      ></video>
+        preload="none"
+      />
       <div
         className="link-tag-parent-animate lg:border-b-[1px] mt-5 lg:mt-0 lg:after:bg-customOrange after:-top-full after:hover:top-0"
         onMouseEnter={onEnter}

@@ -242,13 +242,11 @@ const Work = () => {
               )}
               {project.video != null && (
                 <video
-                  src={project.video}
-                  loop={true}
-                  muted={true}
-                  autoPlay={true}
-                  controls={false}
+                  controls
                   className="transition-all hover:scale-[1.1] object-cover w-full h-full rounded-2xl"
-                ></video>
+                >
+                  <source src={project.video} type="video/mp4" />
+                </video>
               )}
               <div className="absolute z-[2] bottom-0 left-[50%] translate-x-[-50%] pb-5 w-full text-center">
                 <h5 className="text-customWhite text-xl font-bold capitalize">

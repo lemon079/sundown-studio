@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -6,6 +6,7 @@ import BrandPartners from "../Components/HomePage/BrandPartners";
 import Blob from "../Components/ui/Blob";
 
 const Studio = () => {
+  const blobRef = useRef(null);
   gsap.registerPlugin(useGSAP);
   gsap.registerPlugin(ScrollTrigger);
 
@@ -14,7 +15,8 @@ const Studio = () => {
       const animationPower = "power3.inOut";
       const animationDuration = 1.2;
 
-      gsap.from(".moving_blob", {
+      // Animate blob using its ref instead of a class selector
+      gsap.from(blobRef.current, {
         y: "15%",
         x: "10%",
         transform: "scale3d(0.95,1,1.2) rotate(-50deg)",
@@ -24,7 +26,7 @@ const Studio = () => {
         ease: "power1",
       });
 
-      // hero-container ===> (p) animation
+      // Hero container (p) animation
       gsap.from(".hero-container h1 p", {
         opacity: 0,
         y: "100%",
@@ -32,7 +34,7 @@ const Studio = () => {
         duration: animationDuration,
       });
 
-      // All CONTAINERS ===> (h2, paragraph and list) animation
+      // All CONTAINERS (h2, paragraph and list) animation
       const allHeadings = gsap.utils.toArray(".containers .heading--animate");
       allHeadings.map((singleHeading) => {
         gsap.from(singleHeading, {
@@ -136,6 +138,7 @@ const Studio = () => {
       <section className="studio-container bg-gradient-to-b from-customWhite from-10% via-customOrange via-50% to-orange-500 to-60%">
         <section className="hero-container mt-36 relative">
           <Blob
+            ref={blobRef}
             WidthHeight="w-[500px] h-[500px]"
             position="top-0 left-0"
             transform="translate-x-[30%] translate-y-[5%]"
