@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import "./App.css";
-import Loading from "./Components/ui/Loading.jsx";
 import Navbar from "./Components/NavBar.jsx";
 import Footer from "./Components/Footer.jsx";
 import { Route, Routes } from "react-router-dom";
@@ -39,7 +38,7 @@ function App() {
           </Routes>
         </div>
       </main>
-        <Footer />
+      <Footer />
     </>
   );
 }
