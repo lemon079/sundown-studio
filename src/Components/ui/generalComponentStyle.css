@@ -2,15 +2,15 @@
 @import "../../theme.css";
 
 .loading-screen {
-  @apply w-full h-screen bg-black fixed z-[999] flex justify-center items-center;
+  @apply w-full h-screen bg-black fixed z-999 flex justify-center items-center;
 }
 
 .loading-text {
-  @apply font-bold uppercase text-3xl md:text-5xl lg:text-6xl text-transparent bg-gradient-to-r from-customOrangeRed from-20% to-customOrange bg-clip-text text-center w-full absolute top-0;
+  @apply font-bold uppercase text-3xl md:text-5xl lg:text-6xl text-transparent bg-linear-to-r from-customOrangeRed from-20% to-customOrange bg-clip-text text-center w-full absolute top-0;
 }
 
 .blob {
-  @apply bg-customOrangeRed filter blur-[16px] absolute;
+  @apply bg-customOrangeRed filter blur-lg absolute;
 }
 
 .sub-heading-container h3 {
